@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1449729236 source:e:\projects\algorithmsstudy\insertsort.c
+	<stdio.h>
+
+1449711488 source:e:\projects\algorithmsstudy\test.c
+	<stdio.h>
+
+1449828878 source:e:\projects\algorithmsstudy\addbinary.c
+	<stdio.h>
+
+1449829700 source:e:\projects\algorithmsstudy\testmain.c
+	"InsertSort.h"
+	"AddBinary.h"
+	"SelectionSort.h"
+
+1449729200 e:\projects\algorithmsstudy\insertsort.h
+
+1449729335 e:\projects\algorithmsstudy\addbinary.h
+
+1449828878 e:\projects\algorithmsstudy\selectionsort.h
+

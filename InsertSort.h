@@ -1,0 +1,2 @@
+void descend();
+void ascend();
