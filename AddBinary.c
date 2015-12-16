@@ -1,4 +1,8 @@
 #include <stdio.h>
+/*
+*compute two binary arrays' sum
+*/
+
 
 void addBinary(){
     int binaryArrayA[] = {0,1,0,0,1,1,1,1,0,0,0,1,1,1,1,1};

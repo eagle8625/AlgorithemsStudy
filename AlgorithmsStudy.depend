@@ -1,21 +1,30 @@
 # depslib dependency file v1.0
-1449729236 source:e:\projects\algorithmsstudy\insertsort.c
+1450165706 source:e:\gprojects\algorithemsstudy\addbinary.c
 	<stdio.h>
 
-1449711488 source:e:\projects\algorithmsstudy\test.c
+1449729236 source:e:\gprojects\algorithemsstudy\insertsort.c
 	<stdio.h>
 
-1449828878 source:e:\projects\algorithmsstudy\addbinary.c
+1449831093 source:e:\gprojects\algorithemsstudy\selectionsort.c
 	<stdio.h>
 
-1449829700 source:e:\projects\algorithmsstudy\testmain.c
+1450065393 source:e:\gprojects\algorithemsstudy\test.c
+	<stdio.h>
+
+1450249820 source:e:\gprojects\algorithemsstudy\testmain.c
 	"InsertSort.h"
 	"AddBinary.h"
 	"SelectionSort.h"
+	"MergeSort.h"
 
-1449729200 e:\projects\algorithmsstudy\insertsort.h
+1449729200 e:\gprojects\algorithemsstudy\insertsort.h
 
-1449729335 e:\projects\algorithmsstudy\addbinary.h
+1449729335 e:\gprojects\algorithemsstudy\addbinary.h
 
-1449828878 e:\projects\algorithmsstudy\selectionsort.h
+1449828878 e:\gprojects\algorithemsstudy\selectionsort.h
+
+1450236994 e:\gprojects\algorithemsstudy\mergesort.h
+
+1450249798 source:e:\gprojects\algorithemsstudy\mergesort.c
+	<stdio.h>
 

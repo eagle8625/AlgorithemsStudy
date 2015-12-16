@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-void doMerge(int arr[], int firstStartIdx, int firstEndIdx, int secondEndIdx){
-        int arrIntLen = sizeof(arr);
-    int intLen = sizeof(int);
-    printf("%d\n%d\n",arrIntLen, intLen);
+void doMerge(int arraylen,  int arr[], int firstStartIdx, int firstEndIdx, int secondEndIdx){
 
     int i,j,k,leftLen, rightLen;
     leftLen = firstEndIdx - firstStartIdx + 1;
@@ -26,6 +23,31 @@ void doMerge(int arr[], int firstStartIdx, int firstEndIdx, int secondEndIdx){
     j = 0;
     k = 0;
 
+    i = firstStartIdx;
+    while(j < leftLen && k < rightLen){//Copy the remainder into arr after the loop
+         if(leftArray[j] < rightArray[k]){
+            arr[i] = leftArray[j];
+            j++;
+        }else{
+            arr[i] = rightArray[k];
+            k++;
+        }
+        i++;
+    }
+
+    if(j == leftLen){
+        for(; k < rightLen; k++){
+             arr[i] = rightArray[k];
+             i++;
+        }
+    }else if(k == rightLen){
+        for(; j < leftLen; j++){
+            arr[i] = leftArray[j];
+            i++;
+        }
+    }
+    /*
+    //In one loop compare with all the elements
     for(i = firstStartIdx; i <= secondEndIdx; i++){
 
         if(j == leftLen){
@@ -51,24 +73,22 @@ void doMerge(int arr[], int firstStartIdx, int firstEndIdx, int secondEndIdx){
             arr[i] = rightArray[k];
                 k++;
         }
-    }
+    }*/
 
-    int totalLen = sizeof(arr)/sizeof(int);
-    printf("%s","Sorted child array:\n");
-    printf("%d\n",totalLen);
+    printf("%s","Sorting array:\n");
 
-    for( i = 0; i < totalLen; i++){
+    for( i = 0; i < arraylen; i++){
         printf("%d\n",arr[i]);
     }
 }
 
-void mergeSort(int intArray[], int startIdx, int lastIdx){
+void mergeSort(int arraylen, int intArray[], int startIdx, int lastIdx){
     int q;
     if(startIdx < lastIdx){
         q = (startIdx + lastIdx) / 2;
-        mergeSort(intArray, startIdx, q);
-        mergeSort(intArray, q+1, lastIdx);
-        doMerge(intArray, startIdx, q, lastIdx);
+        mergeSort(arraylen,intArray, startIdx, q);
+        mergeSort(arraylen,intArray, q+1, lastIdx);
+        doMerge(arraylen,intArray, startIdx, q, lastIdx);
     }
 }
 

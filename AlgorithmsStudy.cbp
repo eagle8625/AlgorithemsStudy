@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="InsertSort.h" />
+		<Unit filename="MergeSort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MergeSort.h" />
 		<Unit filename="SelectionSort.c">
 			<Option compilerVar="CC" />
 		</Unit>
