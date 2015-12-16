@@ -11,7 +11,7 @@
 1450065393 source:e:\gprojects\algorithemsstudy\test.c
 	<stdio.h>
 
-1450249820 source:e:\gprojects\algorithemsstudy\testmain.c
+1450258522 source:e:\gprojects\algorithemsstudy\testmain.c
 	"InsertSort.h"
 	"AddBinary.h"
 	"SelectionSort.h"
@@ -25,6 +25,12 @@
 
 1450236994 e:\gprojects\algorithemsstudy\mergesort.h
 
-1450249798 source:e:\gprojects\algorithemsstudy\mergesort.c
+1450254993 source:e:\gprojects\algorithemsstudy\mergesort.c
 	<stdio.h>
+
+1450258986 source:e:\gprojects\algorithemsstudy\binarysearch.c
+	<stdio.h>
+	<stdbool.h>
+
+1450260490 source:e:\gprojects\algorithemsstudy\findplusequalsum.c
 
