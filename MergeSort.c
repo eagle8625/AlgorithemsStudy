@@ -92,3 +92,78 @@ void mergeSort(int arraylen, int intArray[], int startIdx, int lastIdx){
     }
 }
 
+void doMergeForFindInv(int arraylen,  int arr[], int firstStartIdx, int firstEndIdx, int secondEndIdx, int * total){
+    int i,j,k,leftLen, rightLen;
+    leftLen = firstEndIdx - firstStartIdx + 1;
+    rightLen = secondEndIdx - firstEndIdx;
+    int leftArray[leftLen];
+    int rightArray[rightLen];
+    printf("%s","Left child array:\n");
+
+    for( i = firstStartIdx,j = 0; i <= firstEndIdx; i++,j++ ){
+        leftArray[j] = arr[i];
+        printf("%d\n",leftArray[j]);
+
+    }
+    printf("%s","Right child array:\n");
+    for(i = firstEndIdx + 1, j = 0; i <= secondEndIdx; i++, j++){
+        rightArray[j] = arr[i];
+        printf("%d\n",rightArray[j]);
+    }
+
+    j = 0;
+    k = 0;
+
+
+    //In one loop compare with all the elements
+    for(i = firstStartIdx; i <= secondEndIdx; i++){
+
+        if(j == leftLen){
+            for(; k < rightLen; k++){
+                arr[i] = rightArray[k];
+                i++;
+            }
+            break;
+        }
+
+        if(k == rightLen){
+            for(; j < leftLen; j++){
+                arr[i] = leftArray[j];
+                i++;
+            }
+            break;
+        }
+
+        if(leftArray[j] < rightArray[k]){
+            arr[i] = leftArray[j];
+                j++;
+        }else{
+            arr[i] = rightArray[k];
+                k++;
+                *total = *total + leftLen - j;
+        }
+    }
+
+    printf("%s","Sorting array:\n");
+
+    for( i = 0; i < arraylen; i++){
+        printf("%d\n",arr[i]);
+    }
+
+}
+
+void findInversionsNumByMergeSort(int arraylen, int intArray[], int startIdx, int lastIdx, int * count){
+    int q;
+
+    if(startIdx < lastIdx){
+        q = (startIdx + lastIdx) / 2;
+        findInversionsNumByMergeSort(arraylen,intArray, startIdx, q, count);
+        findInversionsNumByMergeSort(arraylen,intArray, q+1, lastIdx,count);
+        doMergeForFindInv(arraylen,intArray, startIdx, q, lastIdx,count);
+    }
+}
+
+
+
+
+

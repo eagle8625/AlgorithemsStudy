@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="InsertSort.h" />
+		<Unit filename="LCS.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="LCS.h" />
 		<Unit filename="MergeSort.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +54,11 @@
 		<Unit filename="TestMain.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Util.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Util.h" />
 		<Unit filename="test.c">
 			<Option compilerVar="CC" />
 		</Unit>
