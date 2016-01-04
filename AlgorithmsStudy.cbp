@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Wall" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -47,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MergeSort.h" />
+		<Unit filename="MyUtil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MyUtil.h" />
 		<Unit filename="SelectionSort.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -54,11 +59,6 @@
 		<Unit filename="TestMain.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Util.c">
-			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="Util.h" />
 		<Unit filename="test.c">
 			<Option compilerVar="CC" />
 		</Unit>

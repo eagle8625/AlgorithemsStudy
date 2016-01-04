@@ -57,6 +57,7 @@ int main(void){
 
     free(count);*/
 //The first element is only added to compute LCS,
+    /*
     int xArray[] = {-1,34,56,1,46,1,76,91};
     int yArray[] = {-1,34,2,76,28};
     int cArray[8][5] = {0};
@@ -86,6 +87,11 @@ int main(void){
     for( i = 1; i < 8; i++){
         allLcs[i] = allLcs[0] + i*5;
     }
+    for( i = 0; i < 8; i++){
+        for( j = 0; j < 5; j++){
+            *((int*)allLcs + i * 8 + j) = -1;
+        }
+    }
 
     backtrackAll(cArray,5,xArray,yArray,7,4,allLcs,0,lcsLength,lcsLength - 1);
     for( i = 0; i < 8; i++){
@@ -95,7 +101,45 @@ int main(void){
         printf("\n----------------------\n");
     }
     free(allLcs[0]);
-    free(allLcs);
+    free(allLcs);*/
+
+/*//Test 2 dimentional array
+    int** twoDArrayTest = malloc(5*sizeof(int*));
+    twoDArrayTest[0] = malloc(5*3*sizeof(int));
+    int i,j;
+    for(i= 0; i <= 2; i++){
+        for(j = 0; j <= 4; j++){
+            *((int*)twoDArrayTest + i*5+j)= i*5+j;
+            printf("%d|",*((int*)twoDArrayTest + i*5+j));
+        }
+        printf("\n");
+    }
+*/
+
+    char* x[] = {"This is an important notice! It should",
+    "the same from version to version.",
+    "",
+    "This paragraph contains text that is",
+    "outdated - it will be deprecated '''and'''",
+    "deleted '''in''' the near future.",
+    "",
+    "It is important to spell check this",
+    "dokument. On the other hand, a misspelled",
+    "word isn't the end of the world."};
+    char* y[] = {"This is an important notice! It should",
+    "the same from version to version.",
+    "this document!",
+    "",
+    "This part of the document has stayed",
+    "the same from version to version.",
+    "",
+    "It is important to spell check this",
+    "document. On the other hand, a misspelled",
+    "word isn't the end of the world. This",
+    "paragraph contains important new",
+    "additions to this document."};
+    int** cArray = NULL;
+    LCSLengthForString(x, 10, y, 12, cArray);
 
     return 0;
 }
