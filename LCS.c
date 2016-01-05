@@ -55,6 +55,7 @@ void backtrack(int** cTable, int colLen, int* xArray, int* yArray, int m, int n,
 //https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Longest_common_subsequence#Reading_out_all_LCSs
 //http://selfsupport.com.pk/questions/22299345/how-to-print-all-possible-solutions-for-longest-common-subsequence
 //This method doesn't work
+//Need to realize Set structure which is not available now for me :(
 void backtrackAll(int** cTable, int colLen, int* xArray, int* yArray, int m, int n, int** resArray,int lcsCurNumber, int maxLCSLen, int curPos){
     if( m == 0 || n == 0){
         lcsCurNumber+=1;
@@ -88,8 +89,8 @@ void LCSLengthForString(char* x[], int m, char* y[], int n, int** cArray){
         xEnd-=1;
         yEnd-=1;
     }
-    cArray = malloc((xEnd-start+2)*sizeof(int*));
-    cArray[0] = malloc((xEnd - start + 2)*(yEnd - start + 2)*sizeof(int));
+//    cArray = malloc((xEnd-start+2)*sizeof(int*));
+//    cArray[0] = malloc((xEnd - start + 2)*(yEnd - start + 2)*sizeof(int));
     int i,j;
     for( i = 0; i <= (yEnd - start+1); i++){
         *((int*)cArray+i) = 0;
@@ -142,9 +143,84 @@ void LCSLengthForString(char* x[], int m, char* y[], int n, int** cArray){
         }
         printf("\n---------------------\n");
     }
-        free(cArray[0]);
-       //free(cArray);
+//        free(cArray[0]);
+//        free(cArray);
     return;
+}
+
+void LCSLengthForStringWithoutCompression(char* x[], int m, char* y[], int n, int** cArray){
+    int i,j;
+    for( i = 0; i <= n; i++){
+        *((int*)cArray+i) = 0;
+    }
+    for(i = 0; i<= m; i++){
+        for(j = 0; j <= n; j++){
+            printf("%d|",*( (int*)cArray + i * (n + 1) + j));
+        }
+        printf("\n---------------------\n");
+    }
+
+    for(j = 0; j <= m; j++){
+        *((int*)cArray+j*(n+1)) = 0;
+    }
+
+    for(i = 0; i<= m; i++){
+        for(j = 0; j <= n; j++){
+            printf("%d|",*( (int*)cArray + i * (n + 1) + j));
+        }
+        printf("\n---------------------\n");
+    }
+
+     for(i = 1; i<= m; i++){
+        for(j = 1; j <= n; j++){
+        *( (int*)cArray + i * (n + 1) + j) = 0;
+        }
+    }
+
+      for(i = 0; i<= m; i++){
+        for(j = 0; j <= n; j++){
+            printf("%d|",*( (int*)cArray + i * (n + 1) + j));
+        }
+        printf("\n---------------------\n");
+    }
+    printf("\nInitial matrix array done\n");
+
+    for( i = 0; i < m; i++){
+        for(j = 0; j <n; j++){
+            if((strcmp(x[i],y[j]))==0){
+                *( (int*)cArray + (i+1) * (n + 1) + j + 1) = *( (int*)cArray + i * (n + 1) + j) + 1;
+            }else{
+                *( (int*)cArray + (i+1) * (n + 1) + j + 1) = myMax(*( (int*)cArray + (i+1) * (n + 1) + j),*( (int*)cArray + i * (n + 1) + j + 1));
+            }
+        }
+    }
+
+    for(i = 0; i<= m; i++){
+        for(j = 0; j <= n; j++){
+            printf("%d|",*( (int*)cArray + i * (n + 1) + j));
+        }
+        printf("\n---------------------\n");
+    }
+//        free(cArray[0]);
+//        free(cArray);
+    return;
+}
+
+void printDiff(char* x[], int m, char* y[], int n, int** cArray, int cRow, int cCol){
+    if(m > 0 && n > 0 && strcmp(x[m-1],y[n-1]) == 0){
+        printDiff(x,m-1,y,n-1,cArray,cRow,cCol);
+        printf(" %s\n",x[m-1]);
+    }else{
+        if( n > 0 && ( m == 0 || *((int*)cArray + m*cCol + n-1) >= *((int*)cArray + (m-1)*cCol + n))){
+            printDiff(x,m,y,n-1,cArray,cRow,cCol);
+            printf("+%s\n",y[n-1]);
+        }
+        else if(m > 0 && ( n == 0 || *((int*)cArray + (m-1)*cCol + n) > *((int*)cArray + m*cCol + n - 1))){
+            printDiff(x,m-1,y,n,cArray,cRow,cCol);
+            printf("-%s\n",x[m-1]);
+        }
+    }
+
 }
 
 

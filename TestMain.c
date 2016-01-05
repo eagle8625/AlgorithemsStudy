@@ -116,7 +116,7 @@ int main(void){
     }
 */
 
-    char* x[] = {"This is an important notice! It should",
+    char* x[] = {"This part of the document has stayed",
     "the same from version to version.",
     "",
     "This paragraph contains text that is",
@@ -126,8 +126,9 @@ int main(void){
     "It is important to spell check this",
     "dokument. On the other hand, a misspelled",
     "word isn't the end of the world."};
+
     char* y[] = {"This is an important notice! It should",
-    "the same from version to version.",
+    "therefore be located at the beginning of",
     "this document!",
     "",
     "This part of the document has stayed",
@@ -139,7 +140,16 @@ int main(void){
     "paragraph contains important new",
     "additions to this document."};
     int** cArray = NULL;
-    LCSLengthForString(x, 10, y, 12, cArray);
 
+    cArray = malloc(11*sizeof(int*));
+    cArray[0] = malloc(11*13*sizeof(int));
+
+//    LCSLengthForString(x, 10, y, 12, cArray);
+    LCSLengthForStringWithoutCompression(x, 10, y, 12, cArray);
+    printDiff(x, 10, y, 12, cArray, 11,13);
+
+
+    free(cArray[0]);
+    free(cArray);
     return 0;
 }

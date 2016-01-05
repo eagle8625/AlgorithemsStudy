@@ -7,6 +7,7 @@ int mainT(void){
    return 0;
 }
 
+
 void descend(){
     int intArray[] = {34,56,1,46,1,76,91,213};
     int len = sizeof(intArray)/sizeof(int);

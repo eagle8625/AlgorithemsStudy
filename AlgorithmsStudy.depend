@@ -2,7 +2,7 @@
 1450165706 source:e:\gprojects\algorithemsstudy\addbinary.c
 	<stdio.h>
 
-1449729236 source:e:\gprojects\algorithemsstudy\insertsort.c
+1451898820 source:e:\gprojects\algorithemsstudy\insertsort.c
 	<stdio.h>
 
 1449831093 source:e:\gprojects\algorithemsstudy\selectionsort.c
@@ -11,7 +11,7 @@
 1450065393 source:e:\gprojects\algorithemsstudy\test.c
 	<stdio.h>
 
-1451890170 source:e:\gprojects\algorithemsstudy\testmain.c
+1451959300 source:e:\gprojects\algorithemsstudy\testmain.c
 	"InsertSort.h"
 	"AddBinary.h"
 	"SelectionSort.h"
@@ -37,13 +37,13 @@
 
 1450260490 source:e:\gprojects\algorithemsstudy\findplusequalsum.c
 
-1451891586 source:e:\gprojects\algorithemsstudy\lcs.c
+1451903419 source:e:\gprojects\algorithemsstudy\lcs.c
 	"LCS.h"
 	"Util.h"
 	<string.h>
 	<stdio.h>
 
-1451555070 e:\gprojects\algorithemsstudy\lcs.h
+1451902325 e:\gprojects\algorithemsstudy\lcs.h
 
 1451299375 e:\gprojects\algorithemsstudy\util.h
 
